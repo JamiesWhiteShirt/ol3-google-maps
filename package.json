@@ -11,7 +11,8 @@
   "homepage": "http://mapgears.github.io/ol3-google-maps/",
   "scripts": {
     "pretest": "eslint src/",
-    "test": "node tasks/test.js"
+    "test": "node tasks/test.js",
+    "lint-package": "eslint --fix dist-package"
   },
   "main": "dist/ol3gm.js",
   "repository": {
@@ -40,6 +41,7 @@
     "geojsonhint": "^1.0.0",
     "graceful-fs": "~3.0.2",
     "hoek": "5.0.3",
+    "jscodeshift": "^0.3.32",
     "jsdoc": "3.5.5",
     "marked": "0.3.9",
     "mocha": "2.5.3",
