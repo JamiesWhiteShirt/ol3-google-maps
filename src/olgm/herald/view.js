@@ -1,9 +1,9 @@
 goog.provide('olgm.herald.View');
 
 goog.require('ol');
+goog.require('ol.events');
 goog.require('ol.proj');
 goog.require('olgm');
-goog.require('olgm.events');
 goog.require('olgm.herald.Herald');
 
 
@@ -54,7 +54,7 @@ olgm.herald.View.prototype.activate = function() {
   keys.push(view.on('change:rotation', this.setRotation, this));
 
   // listen to browser window resize
-  this.olgmListenerKeys.push(olgm.events.listen(
+  this.olListenerKeys.push(ol.events.listen(
       window,
       'resize',
       this.handleWindowResize_,
