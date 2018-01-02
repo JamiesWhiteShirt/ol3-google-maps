@@ -13,7 +13,9 @@ var log = closure.log;
  */
 var createServer = exports.createServer = function(callback, loadTests) {
   var lib = [
-    'src/**/*.js'
+    'src/**/*.js',
+    'node_modules/openlayers/src/**/*.js',
+    'node_modules/openlayers/build/ol.ext/*.js'
   ];
 
   if (loadTests) {
@@ -21,8 +23,7 @@ var createServer = exports.createServer = function(callback, loadTests) {
   }
   var manager = new closure.Manager({
     closure: true, // use the bundled Closure Library
-    lib: lib,
-    ignoreRequires: 'ol'
+    lib: lib
   });
   manager.on('error', function(e) {
     log.error('ol3-google-maps', e.message);
