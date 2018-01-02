@@ -54,7 +54,7 @@ olgm.herald.View.prototype.activate = function() {
   keys.push(view.on('change:rotation', this.setRotation, this));
 
   // listen to browser window resize
-  this.olListenerKeys.push(ol.events.listen(
+  keys.push(ol.events.listen(
       window,
       'resize',
       this.handleWindowResize_,

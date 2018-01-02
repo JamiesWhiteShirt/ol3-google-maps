@@ -8,7 +8,6 @@ goog.require('ol.geom.Point');
 goog.require('ol.geom.Polygon');
 goog.require('ol.layer.Vector');
 goog.require('ol.style.Style');
-goog.require('ol.events');
 
 /**
  * @type {!Array.<number>}
@@ -214,13 +213,8 @@ olgm.stringStartsWith = function(string, needle) {
 /**
  * @param {Array.<ol.EventsKey|Array.<ol.EventsKey>>} listenerKeys listener
  * keys
- * @param {Array.<ol.EventsKey>=} opt_olListenerKeys ol listener keys
  */
-olgm.unlistenAllByKey = function(listenerKeys, opt_olListenerKeys) {
+olgm.unlistenAllByKey = function(listenerKeys) {
   listenerKeys.forEach(ol.Observable.unByKey);
   listenerKeys.length = 0;
-  if (opt_olListenerKeys) {
-    opt_olListenerKeys.forEach(ol.events.unlistenByKey);
-    opt_olListenerKeys.length = 0;
-  }
 };
