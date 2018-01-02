@@ -1,7 +1,7 @@
 /* Based on https://github.com/openlayers/openlayers/blob/master/src/ol/events.js */
 goog.provide('olgm.events');
 
-goog.require('olgm.obj');
+goog.require('ol.obj');
 
 
 /**
@@ -92,7 +92,7 @@ olgm.events.removeListeners_ = function(target, type) {
   if (listeners) {
     for (var i = 0, ii = listeners.length; i < ii; ++i) {
       target.removeEventListener(type, listeners[i].boundListener);
-      olgm.obj.clear(listeners[i]);
+      ol.obj.clear(listeners[i]);
     }
     listeners.length = 0;
     var listenerMap = target.ol_lm;
@@ -222,7 +222,7 @@ olgm.events.unlistenByKey = function(key) {
         olgm.events.removeListeners_(key.target, key.type);
       }
     }
-    olgm.obj.clear(key);
+    ol.obj.clear(key);
   }
 };
 
